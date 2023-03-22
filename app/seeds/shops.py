@@ -1,4 +1,4 @@
-from app.models import db, Shop
+from app.models import db, Shop, environment
 
 def seed_shops():
     shop_one = Shop(
@@ -50,5 +50,8 @@ def seed_shops():
     db.session.commit()
 
 def undo_shops():
-    db.session.execute('TRUNCATE shops RESTART IDENTITY CASCADE;')
+    if environment == 'production':
+        db.session.execute(f'TRUNCATE table {SCHEMA}.shops RESTART IDENTITY CASCADE;')
+    else:
+        db.session.execute('DELETE FROM shops')
     db.session.commit()

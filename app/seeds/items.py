@@ -1,4 +1,4 @@
-from app.models import db, Item
+from app.models import db, Item, environment
 
 def seed_items():
   item_one = Item(
@@ -115,5 +115,8 @@ def seed_items():
 
 
 def undo_items():
-  db.session.execute('TRUNCATE items RESTART IDENTITY CASCADE;')
-  db.session.commit()
+    if environment == 'production':
+        db.session.execute(f'TRUNCATE table {SCHEMA}.items RESTART IDENTITY CASCADE;')
+    else:
+        db.session.execute('DELETE FROM items')
+    db.session.commit()
