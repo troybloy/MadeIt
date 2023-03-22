@@ -13,7 +13,8 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
-
+    shop_owner = db.relationship('Shop', back_populates='owner')
+    item_owner = db.relationship('Item', back_populates='owner')
 
     @property
     def password(self):
