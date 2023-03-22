@@ -1,4 +1,4 @@
-from app.models import db, Shop
+from app.models import db, Shop, environment
 
 def seed_shops():
     shop_one = Shop(

@@ -1,4 +1,4 @@
-from app.models import db, Item
+from app.models import db, Item, environment
 
 def seed_items():
   item_one = Item(
