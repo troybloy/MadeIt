@@ -1,4 +1,4 @@
-from .db import db
+from .db import db, SCHEMA, environment, add_prefix_for_prod
 
 class Shop(db.Model):
   __tablename__ = 'shops'
