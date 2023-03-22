@@ -7,7 +7,7 @@ class Item(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
   id = db.Column(db.Integer, primary_key = True)
-  owner_id = db.Column(db.Integer, db.ForeignKey(add_prefeix_for_prod('users.id')), nullable = False)
+  owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable = False)
   item_name = db.Column(db.String(50), nullable = False)
   item_price = db.Column(db.String(10), nullable = False)
   item_description = db.Column(db.String(255), nullable = False)
