@@ -6,7 +6,7 @@ def seed_items():
     item_name="Green fabric",
     item_price="20.00",
     item_description="$20 per yard, very high quality fabric",
-    item_img="",
+    item_img="https://1502fabrics.com/wp-content/uploads/2018/09/Santa-Fe-Green-Apple.jpg",
     shop_id=1
   )
   item_two = Item(
@@ -22,7 +22,7 @@ def seed_items():
     item_name="Levi 501s",
     item_price="125.00",
     item_description="Truly a classic levi.",
-    item_img="",
+    item_img="https://cdn.shopify.com/s/files/1/2776/0162/products/501_blue_dubbelfold.jpg?v=1527366396",
     shop_id=3
   )
   item_four = Item(
@@ -70,7 +70,7 @@ def seed_items():
     item_name="Levi 510s",
     item_price="115.00",
     item_description="These jeans are truly classics. Amazing silhouettes",
-    item_img="",
+    item_img="http://cdn.shopify.com/s/files/1/1141/0648/products/levis-blue-rigid-501-shrink-to-fit-product-1-17737235-0-134185786-normal_large_flex_large_1f823640-802d-4365-9f9b-f21e14d29a1e_grande.jpeg?v=1477508954",
     shop_id=3
   )
   item_ten = Item(
@@ -78,8 +78,24 @@ def seed_items():
     item_name="Men's hanbok",
     item_price="240.00",
     item_description="A beautiful, traditional men's piece.",
-    item_img="",
+    item_img="https://ae01.alicdn.com/kf/H32740651e39047debb25047d72b8955bF/Men-S-Korean-Clothing-Korean-Performance-Costumes-Wedding-Hanbok-Dress-Traditional-Costume-Robes-Minority-Dance-Costumes.jpg_Q90.jpg_.webp",
     shop_id=4
+  )
+  item_eleven = Item(
+    owner_id=2,
+    item_name="Stunning Kimono",
+    item_price="219.99",
+    item_description="This kimono is a result of hundreds of hours of intricate sewing.",
+    item_img="https://media.istockphoto.com/id/108355203/photo/japanese-woman-with-open-arms.jpg?s=612x612&w=0&k=20&c=mfPQVlP6IESX3boO40tYMdiJhOh1KkEbQ1TlOChCqg0=",
+    shop_id=5
+  )
+  item_twelve = Item(
+    owner_id=3,
+    item_name="Ivory silk, 2 yards",
+    item_price="30.00",
+    item_description="A larger cut of silk at a more affordable price.",
+    item_img="https://i.etsystatic.com/19594995/r/il/311f54/1838488431/il_fullxfull.1838488431_luhl.jpg",
+    shop_id=6
   )
 
   db.session.add(item_one)
@@ -92,6 +108,8 @@ def seed_items():
   db.session.add(item_eight)
   db.session.add(item_nine)
   db.session.add(item_ten)
+  db.session.add(item_eleven)
+  db.session.add(item_twelve)
 
   db.session.commit()
 
