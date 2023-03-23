@@ -56,9 +56,10 @@ def update_shop(shop_id):
 
         shop = Shop.query.get(shop_id)
 
+        if not shop or shop.owner_id != current_user.id:
+            return {'errors': 'Unauthorized'}, 401
 
-
-        shop.owner_id = current_user.id
+        # shop.owner_id = current_user.id
         shop.shop_name = form.data["shop_name"]
         shop.shop_description = form.data["shop_description"]
         shop.shop_img = form.data["shop_img"]
@@ -78,7 +79,8 @@ def delete_shop(shop_id):
 
       shop = Shop.query.get(shop_id)
 
-
+      if not shop or shop.owner_id != current_user.id:
+         return {'errors': 'Unauthorized'}, 401
 
       db.session.delete(shop)
       db.session.commit()
