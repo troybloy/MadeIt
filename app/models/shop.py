@@ -8,7 +8,7 @@ class Shop(db.Model):
 
   id = db.Column(db.Integer, primary_key = True)
   owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
-  shop_name = db.Column(db.String(35), nullable = False, unique=True)
+  shop_name = db.Column(db.String, nullable = False, unique=True)
   shop_description = db.Column(db.String(255), nullable = False)
   shop_img = db.Column(db.String(500))
 

@@ -17,7 +17,7 @@ def seed_shops():
     shop_three = Shop(
         owner_id=3,
         shop_name="Thrifted and repaired Levis",
-        shop_description="These Levis are vintage and repaired to restore their original shapes. We have a large selection of 501s, 505s, and 510s especially!",
+        shop_description="These Levis are vintage and repaired to restore their original shapes.",
         shop_img="https://i.ebayimg.com/images/g/LXMAAOSwy8Bg7ZxC/s-l500.jpg"
     )
     shop_four = Shop(
