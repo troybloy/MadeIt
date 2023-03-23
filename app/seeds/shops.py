@@ -1,5 +1,6 @@
 from app.models import db, Shop, environment
 
+
 def seed_shops():
     shop_one = Shop(
         owner_id=1,
@@ -38,7 +39,6 @@ def seed_shops():
         shop_img="https://i.ytimg.com/vi/zvYrAnorq_s/maxresdefault.jpg"
     )
 
-
     db.session.add(shop_one)
     db.session.add(shop_two)
     db.session.add(shop_three)
@@ -46,12 +46,13 @@ def seed_shops():
     db.session.add(shop_five)
     db.session.add(shop_six)
 
-
     db.session.commit()
+
 
 def undo_shops():
     if environment == 'production':
-        db.session.execute(f'TRUNCATE table {SCHEMA}.shops RESTART IDENTITY CASCADE;')
+        db.session.execute(
+            f'TRUNCATE table {SCHEMA}.shops RESTART IDENTITY CASCADE;')
     else:
         db.session.execute('DELETE FROM shops')
     db.session.commit()
