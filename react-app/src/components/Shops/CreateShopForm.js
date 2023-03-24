@@ -53,9 +53,6 @@ const CreateShopForm = () => {
     };
     return await dispatch(createShopThunk(shopData))
     .then((res) => history.push(`/shops/${res.id}`))
-    // if (createdShop) {
-    //   history.push(`/shops/${createdShop.id}`);
-    // }
   }
 
   return (
