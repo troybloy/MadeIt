@@ -14,6 +14,10 @@ import UpdateShopForm from './components/Shops/UpdateShopForm';
 import SingleShop from './components/Shops/SingleShop';
 import UserShops from './components/Shops/UserShops';
 
+import SingleItem from './components/Items/SingleItem';
+import CreateItemForm from './components/Items/CreateItemForm';
+import UpdateItemForm from './components/Items/UpdateItemForm';
+
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -60,8 +64,17 @@ function App() {
         <Route path='/shops/:shopId/update' >
           <UpdateShopForm />
         </Route>
+        <ProtectedRoute path='/shops/:shopId/create-item-form' exact={true}>
+          <CreateItemForm />
+        </ProtectedRoute>
+        <ProtectedRoute path="/items/:itemId/update" exact={true}>
+          <UpdateItemForm />
+        </ProtectedRoute>
         <Route path='/shops/:shopId'>
           <SingleShop />
+        </Route>
+        <Route path='/items/:itemId' exact={true}>
+          <SingleItem />
         </Route>
       </Switch>
     </BrowserRouter>
