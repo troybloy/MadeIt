@@ -15,7 +15,6 @@ const AllShops = () => {
     }, [dispatch])
 
 
-    console.log('shops***********', shops)
     return (
         <div>
             {Object.values(shops).map(shop => (

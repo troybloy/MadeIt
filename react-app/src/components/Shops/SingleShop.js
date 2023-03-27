@@ -55,7 +55,6 @@ const SingleShop = () => {
         <div onClick={removeShop(shop?.id)}>Remove Shop</div>
       )}
       </div>
-      <div className="peapeapie">PEAPEAPIE</div>
     </div>
   );
 }
