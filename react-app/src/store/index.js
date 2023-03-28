@@ -5,7 +5,6 @@ import shopReducer from './shop';
 import userReducer from './user';
 import itemReducer from './item';
 
-
 const rootReducer = combineReducers({
   session,
   shops: shopReducer,

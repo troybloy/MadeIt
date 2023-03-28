@@ -1,9 +1,11 @@
+// ITEM ACTIONS:
 const GET_ALL_ITEMS = 'item/GET_ALL_ITEMS';
 const CREATE_ITEM = 'item/CREATE_ITEM';
 const UPDATE_ITEM = 'item/UPDATE_ITEM';
 const DELETE_ITEM = 'item/DELETE_ITEM';
 
-//ACTIONS
+//**********************************************************************************************
+// ITEM ACTION CREATORS:
 export const getAllItemsAC = (items) => ({
   type: GET_ALL_ITEMS,
   payload: items,
@@ -25,7 +27,10 @@ export const deleteItemAC = (itemId) => ({
 });
 
 
-//THUNKS
+//********************************************************************************************
+
+
+// ITEM THUNKS:
 export const getAllItemsThunk = () => async (dispatch) => {
   const res = await fetch('/api/items/');
   if (res.ok) {
@@ -73,8 +78,8 @@ export const deleteItemThunk = (itemId) => async (dispatch) => {
   }
 };
 
-
-// REDUCE
+//****************************************************************************************
+// ITEM REDUCER:
 const initialState = {};
 const itemReducer = (state = initialState, action) => {
   let newState;

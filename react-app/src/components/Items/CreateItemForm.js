@@ -18,6 +18,7 @@ const CreateItemForm = () => {
   const [item_description, setItem_Description] = useState("");
   const [item_img, setItem_Img] = useState("");
 
+  const [errors, setErrors] = useState([]);
   const [submitted, setSubmitted] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -25,6 +26,7 @@ const CreateItemForm = () => {
 
 
   const parsedPrice = Number(item_price.replace(/[^0-9.]/g, '')).toFixed(2)
+  // const onlyNums = /^[0-9]+(\.[0-9]{1,2})?$/  // doesn't account for commas
   const onlyNums = /^\$?([0-9]{0,2})([0-9]{0,3})?(\.[0-9]{2})?$/
   const imageRegX = /\.(jpeg|jpg|png|svg)$/
 
@@ -61,6 +63,7 @@ console.log("parsedPrice****", parsedPrice)
       setErrors(errors);
     }
   }, [item_name, item_price, item_description, item_img, user]);
+  //comment
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -68,6 +71,7 @@ console.log("parsedPrice****", parsedPrice)
 
     if (errors.length) return
 
+    // let itemPhoto = submitted ? item.item_img : defaultItemImg
     const itemData = {
       owner_id: user.id,
       item_name: item_name.trimStart().trimEnd(),
@@ -82,6 +86,9 @@ console.log("parsedPrice****", parsedPrice)
       // .then(() => setLoaded(true))
       .then(history.push(`/shops/${shopId}`))
   }
+
+  // console.log("shopId", shopId);
+  // console.log("shop_id with number", Number(shopId));
 
 
   return (
