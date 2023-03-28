@@ -3,11 +3,14 @@ import thunk from 'redux-thunk';
 import session from './session'
 import shopReducer from './shop';
 import userReducer from './user';
+import itemReducer from './item';
+
 
 const rootReducer = combineReducers({
   session,
   shops: shopReducer,
-  users: userReducer
+  users: userReducer,
+  items: itemReducer,
 });
 
 
