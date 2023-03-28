@@ -25,9 +25,9 @@ const SplashPage = () => {
     <div className="splashPage-all">
       <div className="splash-page-container">
         <div className="SP-orange-banner"> { shopsArray.length > 0 ?
-          <div className="SP-shops-header">Featured ArtMarts</div>
+          <div className="SP-shops-header">Featured MadeIt shops</div>
           :
-          <div className="SP-no-shops-header">We seem to have no ArtMarts at this time.</div>
+          <div className="SP-no-shops-header">We seem to have no MadeIt shops at this time.</div>
         }
           <div className="SP-shops-outer-container">
             {limitShops.map((shop) => (
