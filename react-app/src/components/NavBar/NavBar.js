@@ -17,7 +17,7 @@ const NavBar = () => {
   return (
     <div className="master-nav-container">
       <div className="nav-container">
-        <div id="nav-bar-logo" onClick={() => history.push('/')}>MadeIr</div>
+        <div id="nav-bar-logo" onClick={() => history.push('/')}>MadeIt</div>
         {!sessionUser && (
           <>
             <div className="sign-in-sign-up-container small-text">
