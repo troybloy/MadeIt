@@ -17,59 +17,19 @@ const CreateItemForm = () => {
   const [item_price, setItem_Price] = useState("");
   const [item_description, setItem_Description] = useState("");
   const [item_img, setItem_Img] = useState("");
-  // const defaultItemImg = useState("https://i.imgur.com/wbRhn3O.png")
-  // const [shop_id, setShop_Id] = useState("");
-  const [errors, setErrors] = useState([]);
+
   const [submitted, setSubmitted] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
 
-  // const parsedPriceInput = Number(item_price.replace(/[^0-9.,]/g, '')).toFixed(2)
-  // console.log("parsedPriceInput", parsedPriceInput)
 
 
   const parsedPrice = Number(item_price.replace(/[^0-9.]/g, '')).toFixed(2)
-  // const onlyNums = /^[0-9]+(\.[0-9]{1,2})?$/  // doesn't account for commas
   const onlyNums = /^\$?([0-9]{0,2})([0-9]{0,3})?(\.[0-9]{2})?$/
   const imageRegX = /\.(jpeg|jpg|png|svg)$/
 
-  // console.log("priceRegex", item_price.match(priceRegex))
 console.log("parsedPrice****", parsedPrice)
-  /************************************** */
-  // Item Price handling Logic
 
-  // USER INPUT (anything)
-  // const numOne = "$1000000"
-  // const parsedPriceOne = parseFloat(numOne.replace(/[^0-9.]/g, '')).toFixed(2)
-  // console.log("parsed Price One*******", parsedPriceOne)
-  // output: "1000000.00"  (string)
-
-
-  //INPUT
-  // const toStringNum = 1000000.65
-  // const toStringPrice = toStringNum.toString()
-  // console.log("toStringPrice****", toStringPrice)
-  // output: "1000000.65"  (string)
-
-  //CONDITION
-  // const numTwo = "$1,000,000.65"
-  // const parsedPriceTwo = parseFloat(numTwo.replace(/[^0-9.]/g, ''))
-  // console.log("parsed Price Two*******", parsedPriceTwo)
-  // // output: 1000000.65 (integer)
-
-  // if (parsedPriceTwo >= 100000.00) console.log("THROW ERROR")
-
-
-  //OUTPUT - for item display forms
-  // const parseNum = 1000000.65
-  // const formattedPrice = (parseNum).toLocaleString("en-US", { style: "currency", currency: "USD" })
-  // console.log("formatted Price*******", formattedPrice)
-  // output: "$1,000,000.65"  (string)
-
-  // if (1000000 < 1000000.65) console.log(true)
-  // else console.log(false)
-
-  /************************************** */
 
   useEffect(() => {
     dispatch(getAllShopsThunk()).then(dispatch(getAllUsersThunk()))
@@ -101,7 +61,6 @@ console.log("parsedPrice****", parsedPrice)
       setErrors(errors);
     }
   }, [item_name, item_price, item_description, item_img, user]);
-  //comment
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -109,7 +68,6 @@ console.log("parsedPrice****", parsedPrice)
 
     if (errors.length) return
 
-    // let itemPhoto = submitted ? item.item_img : defaultItemImg
     const itemData = {
       owner_id: user.id,
       item_name: item_name.trimStart().trimEnd(),
@@ -124,9 +82,6 @@ console.log("parsedPrice****", parsedPrice)
       // .then(() => setLoaded(true))
       .then(history.push(`/shops/${shopId}`))
   }
-
-  // console.log("shopId", shopId);
-  // console.log("shop_id with number", Number(shopId));
 
 
   return (
