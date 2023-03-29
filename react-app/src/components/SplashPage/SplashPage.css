@@ -74,6 +74,9 @@
   .SP-shop-name-container:hover {
     color: #f7d78c;
   }
+  .SP-items-header-container{
+    text-align: center;
+  }
 
   .SP-single-item-card {
     margin-right: 10px;
