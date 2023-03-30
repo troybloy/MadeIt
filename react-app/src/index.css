@@ -1,1 +1,333 @@
 /* TODO Add site wide styles */
+/* TODO Add site wide styles */
+#root {
+    font-family: 'georgia';
+    /* padding-right: 50px; */
+  }
+
+
+  body {
+    margin-right: 80px;
+  }
+
+  .asterisk {
+    color: red;
+    font-weight: 900;
+  }
+
+  .required-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* margin-left: 10px; */
+  }
+
+  .form-outer-container {
+    display: flex;
+    justify-content: center;
+    word-break: break-word;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    word-break: break-word;
+    top: 25px;
+  }
+
+  .form-field-label {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+  .form-field {
+    width: 500px;
+    height: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid lightgrey;
+  }
+
+  .errorMessageContainer {
+    display: flex;
+    color: red;
+    width: 500px;
+    word-break: break-word;
+  }
+
+  .errorMessage {
+    display: flex;
+    margin-top: 8px;
+    /* height: 10px; */
+  }
+
+
+  .form-button {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 4px;
+    height: 42px;
+    border: none;
+    cursor: pointer;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+  .form-button:hover {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.57);
+  }
+
+  .form-header {
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 12px;
+  }
+
+  .small-text {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .submit-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Shops CSS */
+
+  .orange-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: bisque;
+    position: sticky;
+    top: 0px;
+    /* padding-left: 280px; */
+    /* border-top: 2px solid rgb(220, 220, 220); */
+
+    z-index: 8;
+  }
+
+  /* .white-banner {
+    background-color: white;
+    height:80px;
+    position: sticky;
+    top: 100px;
+  } */
+
+  .your-shops-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    /* border-bottom: 2px solid black; */
+  }
+
+  .no-shops-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+
+  .create-shop-button {
+    display: flex;
+    position: absolute;
+    margin-top: 75px;
+    justify-content: center;
+    background-color: white;
+    color: #F1641E;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.57);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    z-index: 10 !important;
+  }
+
+  .create-shop-button-no-shop {
+    display: flex;
+    position: absolute;
+    margin-top: 75px;
+    justify-content: center;
+    background-color: white;
+    color: #F1641E;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.57);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    z-index: 10 !important;
+  }
+
+  .create-shop-button-no-shop:hover {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.57);
+  }
+
+  .create-shop-button:hover {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.57);
+  }
+
+  .user-shops-page-outer-container {
+    width: 100%;
+    /* padding-right: 5px; */
+    /* margin-top: 50px; */
+
+  }
+
+  .user-shops-page-inner-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1325px;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    margin-top: 70px;
+  }
+
+  .shop-cards-container {
+    display: flex;
+    flex-direction: column;
+    top: 0px;
+
+  }
+
+  .vl {
+    border-left: 1px solid black;
+    margin-right: 25px;
+  }
+
+  .MYP-container {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    border-radius: 5px;
+    top: 180px;
+    position: sticky;
+  }
+
+  .MYP-no-shops {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+    border-radius: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: sticky;
+    margin: auto;
+  }
+
+  .no-shops-container {
+    display: flex;
+    width: auto;
+  }
+
+  .shop-img {
+    display: flex;
+    height: 500px;
+    border-radius: 5px;
+  }
+
+  .no-shop-img {
+    display: flex;
+    height: 500px;
+    border-radius: 5px;
+  }
+
+  .entire-no-shops {
+    min-width: 580px;
+    margin: auto;
+  }
+
+  @media only screen and (max-width: 1415px) {
+    .MYP-container {
+      /* padding-left: 30px !important; */
+      display: flex;
+      height: 200px;
+    }
+
+    .user-shops-page-inner-container {
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+    }
+  }
+
+  @media only screen and (max-width: 1125px) {
+    .orange-banner {
+      z-index: 5 !important;
+    }
+    .vl {
+      display: none;
+    }
+    .shop-img {
+      display: none;
+    }
+    .MYP-container {
+      /* padding-left: 30px !important; */
+      display: flex;
+      margin-bottom: 0px;
+      height: 70px;
+      position: relative !important;
+      z-index: 0 !important;
+    }
+    .user-shops-page-outer-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column-reverse;
+      position: relative;
+    }
+    .user-shops-page-inner-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column-reverse;
+      position: relative;
+      margin-top: 0px;
+    }
+    .create-shop-button {
+      display: flex;
+      justify-content: center;
+      position: absolute !important;
+      margin-top: -165px !important;
+      justify-content: center;
+      background-color: black;
+      color: #F1641E;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      width: 200px;
+      z-index: 0 !important;
+    }
+  }
+
+
+  @media only screen and (max-width: 501px) {
+    .your-shops-title {
+      margin-left: 100px !important;
+      /* border-bottom: 2px solid black; */
+    }
+    .no-shops-title {
+      margin-left: 100px !important;
+    }
+  }
