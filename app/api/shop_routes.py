@@ -3,21 +3,20 @@ from flask_login import login_required, current_user
 from app.models import Shop, db
 from ..forms.shop_form import CreateShopForm
 
+
 shop_routes = Blueprint('shops', __name__)
 
 
-# *************************************************************************#
+#*************************************************************************#
 # GET ALL SHOPS
 @shop_routes.route('/', methods=['GET'])
 def get_shops():
     shops = Shop.query.all()
     return {'shops': [shop.to_dict() for shop in shops]}
 
-# *************************************************************************#
-# CREATE A SHOP
-
-
-@shop_routes.route('/', methods=['POST'])
+#*************************************************************************#
+#CREATE A SHOP
+@shop_routes.route('/create_shop', methods=['POST'])
 @login_required
 def create_shop():
 
@@ -28,10 +27,10 @@ def create_shop():
     if form.validate_on_submit():
 
       shopData = Shop(
-        owner_id=current_user.id,
-        shop_name=form.data["shop_name"],
-        shop_description=form.data["shop_description"],
-        shop_img=form.data["shop_img"]
+        owner_id = current_user.id,
+        shop_name = form.data["shop_name"],
+        shop_description = form.data["shop_description"],
+        shop_img = form.data["shop_img"]
       )
 
       db.session.add(shopData)
@@ -40,14 +39,11 @@ def create_shop():
     else:
       return {'errors': form.errors}, 401
 
-# *************************************************************************#
+#*************************************************************************#
 # UPDATE A SHOP
-
-
 @shop_routes.route('/<int:shop_id>', methods=['PUT'])
 @login_required
 def update_shop(shop_id):
-
       form = CreateShopForm()
 
       form["csrf_token"].data = request.cookies["csrf_token"]
@@ -56,10 +52,7 @@ def update_shop(shop_id):
 
         shop = Shop.query.get(shop_id)
 
-        if not shop or shop.owner_id != current_user.id:
-            return {'errors': 'Unauthorized'}, 401
-
-        # shop.owner_id = current_user.id
+        shop.owner_id = current_user.id
         shop.shop_name = form.data["shop_name"]
         shop.shop_description = form.data["shop_description"]
         shop.shop_img = form.data["shop_img"]
@@ -69,19 +62,17 @@ def update_shop(shop_id):
       else:
         return {'errors': form.errors}, 401
 
-# ****************************************************************************************************
+#****************************************************************************************************
 # DELETE A SHOP
-
-
 @shop_routes.route('/<int:shop_id>', methods=['DELETE'])
 @login_required
 def delete_shop(shop_id):
 
       shop = Shop.query.get(shop_id)
-
-      if not shop or shop.owner_id != current_user.id:
-         return {'errors': 'Unauthorized'}, 401
-
       db.session.delete(shop)
       db.session.commit()
       return {'message': 'Business deleted'}
+
+
+#*************************************************************************#
+# SEARCH FOR A SHOP (add later)

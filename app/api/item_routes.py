@@ -6,6 +6,7 @@ from ..forms.item_form import CreateItemForm
 
 item_routes = Blueprint('items', __name__)
 
+#*************************************************************************#
 # GET ALL ITEMS
 @item_routes.route('/', methods=['GET'])
 def get_items():
@@ -13,57 +14,60 @@ def get_items():
     print('API ROUTE ITEMS', items)
     return {'items': [item.to_dict() for item in items]}
 
-
-# CREATE AN ITEM
-@item_routes.route('/create_item', methods=['POST'])
-@login_required
-def create_item():
-
-    form = CreateItemForm()
-
-    form["csrf_token"].data = request.cookies["csrf_token"]
-
-    if form.validate_on_submit():
-
-        item_data = Item(
-            owner_id=current_user.id,
-            item_name=form.data["item_name"],
-            item_price=form.data["item_price"],
-            item_description=form.data["item_description"],
-            item_img=form.data["item_img"],
-            shop_id=form.data["shop_id"]
-        )
-
-        db.session.add(item_data)
-        db.session.commit()
-        return jsonify(item_data.to_dict()), 200
-    else:
-        return {'errors': form.errors}, 401
-
+#*************************************************************************#
 # UPDATE AN ITEM
 @item_routes.route('/<int:item_id>', methods=['PUT'])
 @login_required
 def update_item(item_id):
-    form = CreateItemForm()
+        form = CreateItemForm()
 
-    form["csrf_token"].data = request.cookies["csrf_token"]
+        form["csrf_token"].data = request.cookies["csrf_token"]
 
-    if form.validate_on_submit():
+        if form.validate_on_submit():
 
-        item = Item.query.get(item_id)
+          item = Item.query.get(item_id)
 
-        item.owner_id = current_user.id
-        item.item_name = form.data["item_name"]
-        item.item_price = form.data["item_price"]
-        item.item_description = form.data["item_description"]
-        item.item_img = form.data["item_img"]
-        item.shop_id = form.data["shop_id"]
+          item.owner_id = current_user.id
+          item.item_name = form.data["item_name"]
+          item.item_price = form.data["item_price"]
+          item.item_description = form.data["item_description"]
+          item.item_img = form.data["item_img"]
+          item.shop_id = form.data["shop_id"]
+          # item.category_id = form.data["category_id"]
 
+          db.session.commit()
+          return jsonify(item.to_dict()), 200
+        else:
+          return {'errors': form.errors}, 401
+
+#*************************************************************************#
+#CREATE AN ITEM
+@item_routes.route('/create_item', methods=['POST'])
+@login_required
+def create_item():
+
+      form = CreateItemForm()
+
+      form["csrf_token"].data = request.cookies["csrf_token"]
+
+      if form.validate_on_submit():
+
+        item_data = Item(
+          owner_id = current_user.id,
+          item_name = form.data["item_name"],
+          item_price = form.data["item_price"],
+          item_description = form.data["item_description"],
+          item_img = form.data["item_img"],
+          shop_id = form.data["shop_id"]
+          )
+
+        db.session.add(item_data)
         db.session.commit()
-        return jsonify(item.to_dict()), 200
-    else:
+        return jsonify(item_data.to_dict()), 200
+      else:
         return {'errors': form.errors}, 401
 
+#*************************************************************************#
 # DELETE AN ITEM
 @item_routes.route('/<int:item_id>', methods=['DELETE'])
 @login_required
