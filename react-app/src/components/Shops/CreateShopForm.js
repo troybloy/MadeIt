@@ -29,7 +29,7 @@ const CreateShopForm = () => {
         errors.push("shop name: must be between 2 and 50 characters.")
       }
       if (shop_description.length < 2 || shop_description.length > 255) {
-        errors.push("shop name: must be between 2 and 255 characters.")
+        errors.push("shop description: must be between 2 and 255 characters.")
       }
       if (shop_img.length < 2 || !shop_img.split('?')[0].match(imageRegX)) {
         errors.push("image: must be a valid type: jpg, jpeg, png, svg.")
