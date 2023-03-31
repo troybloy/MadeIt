@@ -29,14 +29,14 @@ const UpdateItemForm = () => {
     if(item) {
       setLoaded(true)
       setItem_Name(item.item_name)
-      setItem_Price(item.item_price)
+      setItem_Price(Number(item.item_price).toString());
       setItem_Description(item.item_description)
       setItem_Img(item.item_img)
       setShop_Id(item.shop_id)
     }
   }, [item]);
 
-  const parsedPrice = Number(item_price.replace(/[^0-9.]/g, '')).toFixed(2)
+  const parsedPrice = parseFloat(item_price).toFixed(2);
   // const onlyNums = /^[0-9]+(\.[0-9]{1,2})?$/  // doesn't account for commas
   const onlyNums = /^\$?([0-9]{0,2})([0-9]{0,3})?(\.[0-9]{2})?$/
   const imageRegX = /\.(jpeg|jpg|png|svg)$/
@@ -53,9 +53,10 @@ const UpdateItemForm = () => {
       if (item_name.length < 2 || item_name.length > 50 || item_name.includes("  ")) {
         errors.push("Item name must be between 2 and 50 characters and must not contain any doubled or more white space")
       }
-      if (parsedPrice >= 100000.00 || parsedPrice <= 0.00 || !onlyNums.test(item_price) || item_price.includes("  ")) {
-        errors.push("Item prices must must not contain any white space and be a number greater than '$0.00' and less than '$100,000.00' with no commas (prices with cents must be in '$.$$' format)")
+      if (parsedPrice >= 100000.00 || parsedPrice <= 0.00 || !onlyNums.test(item_price) || item_price.toString().includes("  ")) {
+        errors.push("Item prices must not contain any spaces and be a number between '$0.00' and '$100,000.00' with no commas (prices with cents must be in '$.$$' format)");
       }
+
       if (item_description.length < 2 || item_description.length > 255 || item_description.includes("  ")) {
         errors.push("Item description must be between 2 and 255 characters")
       }
@@ -78,7 +79,7 @@ const UpdateItemForm = () => {
     const itemData = {
       owner_id: user.id,
       item_name: item_name.trimStart().trimEnd(),
-      item_price: parsedPrice.trimStart().trimEnd(),
+      item_price: parseFloat(item_price).toFixed(2),
       item_description: item_description.trimStart().trimEnd(),
       item_img: item_img,
       shop_id: shop_id
@@ -120,10 +121,10 @@ const UpdateItemForm = () => {
             <input
               className="form-field"
               name="Item Price"
-              type="text"
+              type="number"
               value={item_price}
               placeholder="Item Price"
-              onChange={(e) => setItem_Price(e.target.value)}
+              onChange={(e) => setItem_Price(parseFloat(e.target.value))}
               required
             />
           </div>
