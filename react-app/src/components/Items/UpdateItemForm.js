@@ -38,7 +38,7 @@ const UpdateItemForm = () => {
 
   const parsedPrice = parseFloat(item_price).toFixed(2);
   // const onlyNums = /^[0-9]+(\.[0-9]{1,2})?$/  // doesn't account for commas
-  const onlyNums = /^\$?([0-9]{1,3}(?:,[0-9]{3})*(\.[0-9]{2})?)$/;
+  const onlyNums = /^\$?(\d{1,3}(?:,\d{3})*|(\d+))(\.\d{2})?$/;
   const imageRegX = /\.(jpeg|jpg|png|svg)$/
 
   useEffect(() => {
