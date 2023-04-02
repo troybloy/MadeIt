@@ -29,7 +29,7 @@ const UpdateItemForm = () => {
     if(item) {
       setLoaded(true)
       setItem_Name(item.item_name)
-      setItem_Price(Number(item.item_price).toString());
+      setItem_Price(item.item_price.toFixed(2));
       setItem_Description(item.item_description)
       setItem_Img(item.item_img)
       setShop_Id(item.shop_id)
@@ -38,7 +38,7 @@ const UpdateItemForm = () => {
 
   const parsedPrice = parseFloat(item_price).toFixed(2);
   // const onlyNums = /^[0-9]+(\.[0-9]{1,2})?$/  // doesn't account for commas
-  const onlyNums = /^\$?([0-9]{0,2})([0-9]{0,3})?(\.[0-9]{2})?$/
+  const onlyNums = /^\$?([0-9]{1,3}(?:,[0-9]{3})*(\.[0-9]{2})?)$/;
   const imageRegX = /\.(jpeg|jpg|png|svg)$/
 
   useEffect(() => {
@@ -121,10 +121,14 @@ const UpdateItemForm = () => {
             <input
               className="form-field"
               name="Item Price"
-              type="number"
+              type="text"
               value={item_price}
               placeholder="Item Price"
-              onChange={(e) => setItem_Price(parseFloat(e.target.value))}
+              onChange={(e) => {
+                if (!isNaN(e.target.value) && /^\d*\.?\d{0,2}$/.test(e.target.value)) {
+                  setItem_Price(e.target.value);
+                }
+              }}
               required
             />
           </div>
