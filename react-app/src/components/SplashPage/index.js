@@ -15,7 +15,7 @@ const SplashPage = () => {
   const items = useSelector((state) => state.items);
   const shopsArray = Object.values(shops);
   const limitShops = shopsArray.slice(0, 6)
-  const itemsArray = Object.values(items);
+  const itemsArray = Object.values(items).slice(0, 10);
 
   useEffect(() => {
     dispatch(getAllShopsThunk()).then(() => dispatch(getAllItemsThunk()))

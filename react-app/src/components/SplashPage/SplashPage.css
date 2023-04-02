@@ -36,7 +36,9 @@
 
   .SP-shops-outer-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     justify-content: center;
   }
 
@@ -74,12 +76,11 @@
   .SP-shop-name-container:hover {
     color: #f7d78c;
   }
-  .SP-items-header-container{
 
-  }
 
   .SP-single-item-card {
     margin-right: 10px;
+    margin-bottom: 10px;
   }
 
   .SP-items-header {
