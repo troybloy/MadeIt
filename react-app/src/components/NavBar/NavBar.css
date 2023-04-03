@@ -139,30 +139,29 @@
     z-index: 10;
   }
 
-  .drop-nav:hover {
-    border-radius: 300px;
-    background-color: lightgray;
-    padding: 8px;
-    cursor: pointer;
-  }
-
-  .drop-nav i.fa-user-circle {
-    font-size: 23px;
-    color: rgb(34, 34, 34);
-    vertical-align: middle;
-    margin-right: 10px;
-  }
 
   .drop-nav-button {
     display: flex;
     cursor: pointer;
-    color: black;
-    /* background-color: transparent; */
+    color: red;
+    border: 2px solid red;
+    border-radius: 20px;
+    padding: 8px;
+  }
+  .profile_icon{
+    color: red;
   }
 
-  .dropnav-button:hover {
+
+  .drop-nav-button:hover{
+    background-color: red;
+    color: white;
     box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.57);
     transition-duration: 300ms;
+  }
+
+  .drop-nav-button:hover .profile_icon {
+    color: white;
   }
 
   .drop-nav-open {
@@ -253,11 +252,13 @@
     padding: 8px;
     white-space: nowrap;
     transition-duration: 300ms;
+    color: red;
   }
 
   .your-shops-button:hover {
     border-radius: 300px;
-    background-color: lightgray;
+    background-color: red;
+    color: white;
   }
 
   .your-shops-button:active {
