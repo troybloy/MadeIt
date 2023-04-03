@@ -1,6 +1,6 @@
 .splashPage-all {
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
     max-width: 1200px;
     width: 100%;
   }
@@ -20,7 +20,7 @@
     padding: 20px;
     text-align: center;
     height: 130px;
-    width: ;
+    width: 1800px;
   }
 
   .SP-shops-header {
@@ -43,14 +43,14 @@
 
   .SP-shop-card-container-outer{
     background-color: #fff;
-    border-radius: 50%;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin: 10px;
     overflow: hidden;
     width: 150px;
     transition: all 0.2s ease-in-out;
     position: relative;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
   }
 
   .SP-shop-img-container {
@@ -69,12 +69,11 @@
     color: #000;
     font-size: 16px;
     font-weight: bold;
-    margin: 10px;
     text-align: center;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 5px 0;
