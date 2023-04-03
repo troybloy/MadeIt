@@ -20,6 +20,8 @@ import UpdateItemForm from './components/Items/UpdateItemForm';
 
 import SplashPage from './components/SplashPage';
 
+import Footer from './components/Footer/Footer';
+
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -79,6 +81,7 @@ function App() {
           <SingleItem />
         </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
