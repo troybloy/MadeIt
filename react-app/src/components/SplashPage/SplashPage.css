@@ -83,7 +83,9 @@
     color: #f7d78c;
   }
 
-
+.SP-items-header-container{
+  margin-top:80px;
+}
   .SP-single-item-card {
     margin-right: 10px;
     margin-bottom: 10px;
@@ -91,8 +93,9 @@
 
   .SP-items-header {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 20px;
+    margin-left: 74px;
   }
 
   .SP-no-items-header {
