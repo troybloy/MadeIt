@@ -24,22 +24,22 @@ const SplashPage = () => {
   return (
     <div className="splashPage-all">
       <div className="splash-page-container">
-        <div className="SP-orange-banner"> { shopsArray.length > 0 ?
-          <div className="SP-shops-header">Featured MadeIt shops</div>
+        <div className="SP-banner"> { shopsArray.length > 0 ?
+          <div className="SP-shops-header">Find things you'll love. Support Troy. Here are some featured MadeIt stores!</div>
           :
           <div className="SP-no-shops-header">We seem to have no MadeIt shops at this time.</div>
         }
           <div className="SP-shops-outer-container">
             {limitShops.map((shop) => (
-              <div className="SP-shop-card-container transtition" >
-                <div className="SP-shop-img-container tansition" >
+              <div className="SP-shop-card-container outer" >
+                <div className="SP-shop-img-container" >
                   <img
                     src={shop?.shop_img}
                     onClick={() => history.push(`/shops/${shop?.id}`)}
-                    className="SP-shop-card-img transition"
+                    className="SP-shop-card-img"
                     alt="Shop Image"
                   />
-                </div>
+         why       </div>
                 <div
                   className="SP-shop-name-container"
                   onClick={() => history.push(`/shops/${shop?.id}`)}
@@ -54,7 +54,7 @@ const SplashPage = () => {
       <div className="SP-items-header-container"> { itemsArray.length > 0 ?
           <div className="SP-items-header">Featured Items</div>
           :
-          <div className="SP-no-items-header">We seem to have no Items at this time.</div>
+          <div className="SP-no-items-header">We seem to have no items at this time.</div>
         }
         </div>
       <div className="SP-items-outer-container">

@@ -13,18 +13,18 @@
     margin-bottom: 40px;
   }
 
-  .SP-orange-banner {
-    background-color: #f7d78c;
+  .SP-banner {
+    background-color: #d5e7e5;
     border-radius: 5px;
     margin-bottom: 20px;
     padding: 20px;
-    text-align: lcentereft;
-    width: 100%;
+    text-align: center;
+    height: 130px;
+    width: 2000px;
   }
 
   .SP-shops-header {
     font-size: 24px;
-    font-weight: bold;
     margin-bottom: 10px;
   }
 
@@ -44,12 +44,14 @@
 
   .SP-shop-card-container {
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin: 10px;
     overflow: hidden;
-    width: 200px;
+    width: 150px;
     transition: all 0.2s ease-in-out;
+    position: relative;
+    padding-bottom: 10px;
   }
 
   .SP-shop-img-container {
@@ -61,6 +63,7 @@
   .SP-shop-img-container img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 
   .SP-shop-name-container {
@@ -71,6 +74,11 @@
     text-align: center;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 0;
   }
 
   .SP-shop-name-container:hover {
