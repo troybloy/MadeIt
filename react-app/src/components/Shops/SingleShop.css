@@ -5,7 +5,7 @@
 .SS-orange-banner {
   display: flex;
   height: 150px;
-  background-color: bisque;
+  background-color: #d5e7e5;
   /* position: sticky; */
   top: 0px;
   margin-bottom: 50px;
