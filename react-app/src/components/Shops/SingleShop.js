@@ -5,6 +5,8 @@ import { getAllShopsThunk, deleteShopThunk, updateShopThunk } from "../../store/
 import ItemCard from "../ItemCard";
 import { getAllItemsThunk } from "../../store/item";
 import './SingleShop.css'
+import defaultImg from '../Images/defaultImg.png'
+
 
 const SingleShop = () => {
   const dispatch = useDispatch();
@@ -78,6 +80,7 @@ const SingleShop = () => {
                   className="shop-page-img"
                   src={shop?.shop_img}
                   alt="Shop Image"
+                  onError={(e) => { e.target.src=defaultImg}}
                 />
               </div>
             </div>
