@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import './ItemCard.css'
 
+import defaultImg from '../Images/defaultImg.png'
+
 
 const ItemsCard = ({ item }) => {
   const dispatch = useDispatch();
@@ -29,6 +31,7 @@ const ItemsCard = ({ item }) => {
           src={item?.item_img}
           className="item-card-img"
           alt="Item Image"
+          onError={(e) => { e.target.src = defaultImg }}
         />
       </div>
     </div>

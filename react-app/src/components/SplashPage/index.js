@@ -6,6 +6,8 @@ import { getAllItemsThunk } from '../../store/item'
 // import ShopsCard from '../ShopCard';
 import ItemsCard from '../ItemCard'
 import './SplashPage.css'
+import defaultImg from '../Images/defaultImg.png'
+
 
 const SplashPage = () => {
   const dispatch = useDispatch()
