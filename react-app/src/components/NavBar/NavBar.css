@@ -187,15 +187,12 @@
     align-items: center;
     /* font-style: Helvetica !important; */
     border-bottom: 1px solid lightgrey;
-  }
-
-  .drop-nav-name:hover {
-    background-color: #eee;
+    justify-content: space-around;
   }
 
   .drop-nav-option {
-    padding: 10px 20px;
-    text-align: left;
+    padding: 10px;
+    text-align: center;
   }
 
   .drop-nav-option:hover {
