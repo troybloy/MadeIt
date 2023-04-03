@@ -26,8 +26,8 @@ const UserShops = () => {
 
   return loaded && (
     <>
-      <div>
-        <div className="create-shop-button" onClick={() => history.push('/create-shop-form')}>Create a shop</div>
+      <div className='create-shop-container'>
+        <div className="create-shop-button" onClick={() => history.push('/create-shop-form')}>Create your own MadeIt store!</div>
       </div>
       {
         userShops.map(shop => (<ShopsCard shop={shop} key={shop.id} />))

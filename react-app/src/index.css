@@ -141,49 +141,37 @@
   }
 
 
-  .create-shop-button {
+  .create-shop-button, .create-shop-button-no-shop {
     display: flex;
-    position: absolute;
-    margin-top: 75px;
+    margin-bottom: 0px;
+    margin-top: 40px;
     justify-content: center;
     background-color: white;
     color: #F1641E;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.57);
-    font-size: 16px;
-    font-weight: 700;
-    padding: 8px 16px;
+    font-size: 20px;
     border-radius: 4px;
     border: none;
     cursor: pointer;
     width: 200px;
-    z-index: 10 !important;
+    white-space: nowrap;
+    /* z-index: 10 !important; */
   }
 
-  .create-shop-button-no-shop {
+  .create-shop-button:hover, .create-shop-button-no-shop:hover {
+    font-weight: bold;
+  }
+
+  .create-shop-button:active, .create-shop-button-no-shop:active {
+    transform: translateY(2px);
+  }
+
+
+  .create-shop-container {
     display: flex;
-    position: absolute;
-    margin-top: 75px;
     justify-content: center;
-    background-color: white;
-    color: #F1641E;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.57);
-    font-size: 16px;
-    font-weight: 700;
-    padding: 8px 16px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    width: 200px;
-    z-index: 10 !important;
+    /* margin-bottom: 20px; */
   }
 
-  .create-shop-button-no-shop:hover {
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.57);
-  }
-
-  .create-shop-button:hover {
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.57);
-  }
 
   .user-shops-page-outer-container {
     width: 100%;
@@ -256,78 +244,4 @@
   .entire-no-shops {
     min-width: 580px;
     margin: auto;
-  }
-
-  @media only screen and (max-width: 1415px) {
-    .MYP-container {
-      /* padding-left: 30px !important; */
-      display: flex;
-      height: 200px;
-    }
-
-    .user-shops-page-inner-container {
-      padding-left: 30px !important;
-      padding-right: 30px !important;
-    }
-  }
-
-  @media only screen and (max-width: 1125px) {
-    .orange-banner {
-      z-index: 5 !important;
-    }
-    .vl {
-      display: none;
-    }
-    .shop-img {
-      display: none;
-    }
-    .MYP-container {
-      /* padding-left: 30px !important; */
-      display: flex;
-      margin-bottom: 0px;
-      height: 70px;
-      position: relative !important;
-      z-index: 0 !important;
-    }
-    .user-shops-page-outer-container {
-      display: flex;
-      justify-content: center;
-      flex-direction: column-reverse;
-      position: relative;
-    }
-    .user-shops-page-inner-container {
-      display: flex;
-      justify-content: center;
-      flex-direction: column-reverse;
-      position: relative;
-      margin-top: 0px;
-    }
-    .create-shop-button {
-      display: flex;
-      justify-content: center;
-      position: absolute !important;
-      margin-top: -165px !important;
-      justify-content: center;
-      background-color: black;
-      color: #F1641E;
-      font-size: 16px;
-      font-weight: 700;
-      padding: 8px 16px;
-      border-radius: 4px;
-      border: none;
-      cursor: pointer;
-      width: 200px;
-      z-index: 0 !important;
-    }
-  }
-
-
-  @media only screen and (max-width: 501px) {
-    .your-shops-title {
-      margin-left: 100px !important;
-      /* border-bottom: 2px solid black; */
-    }
-    .no-shops-title {
-      margin-left: 100px !important;
-    }
   }
