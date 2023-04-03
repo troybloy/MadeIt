@@ -1,117 +1,132 @@
 .splashPage-all {
-    margin: 0 auto;
-    /* padding: 20px; */
-    max-width: 1200px;
-    width: 100%;
-  }
-
-  .splash-page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 40px;
-  }
-
-  .SP-banner {
-    background-color: #d5e7e5;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    padding: 20px;
-    text-align: center;
-    height: 130px;
-    width: 1800px;
-  }
-
-  .SP-shops-header {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .SP-no-shops-header {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .SP-shops-outer-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: center;
-  }
-
-  .SP-shop-card-container-outer{
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 10px;
-    overflow: hidden;
-    width: 150px;
-    transition: all 0.2s ease-in-out;
-    position: relative;
-    /* padding-bottom: 10px; */
-  }
-
-  .SP-shop-img-container {
-    height: 150px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .SP-shop-img-container img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .SP-shop-name-container {
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 5px 0;
-  }
-
-  .SP-shop-name-container:hover {
-    color: #f7d78c;
-  }
-
-.SP-items-header-container{
-  margin-top:80px;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
 }
-  .SP-single-item-card {
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
 
-  .SP-items-header {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    margin-left: 74px;
-  }
+.splash-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
 
-  .SP-no-items-header {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
+.SP-banner {
+  background-color: #d5e7e5;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+  height: 130px;
+  width: 1800px;
+}
 
-  .SP-items-outer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.SP-shops-header {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
-  .SP-item-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.SP-no-shops-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.SP-shops-outer-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: center;
+}
+
+.SP-shop-card-container-outer {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  overflow: hidden;
+  width: 150px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  cursor: pointer;
+}
+
+.SP-shop-card-container-outer:hover {
+  transform: scale(1.1);
+}
+
+.SP-shop-img-container {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.SP-shop-img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.SP-shop-name-container {
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.SP-shop-name-container:hover {
+  color: #f7d78c;
+}
+
+.SP-items-header-container {
+  margin-top: 80px;
+}
+
+.SP-single-item-card {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.SP-single-item-card:hover {
+  transform: scale(1.1);
+}
+
+.SP-single-item-card:active {
+  background-color: #d5e7e5;
+}
+
+.SP-items-header {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-left: 74px;
+}
+
+.SP-no-items-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.SP-items-outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SP-item-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
