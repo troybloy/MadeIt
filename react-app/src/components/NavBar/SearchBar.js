@@ -5,20 +5,26 @@ const SearchBar = ({ onSearch }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSearch(searchText);
+    if (searchText) {
+      onSearch(searchText);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="search-bar-container">
       <input
         type="text"
+        placeholder="Search"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        placeholder="Search items..."
+        className="search-input"
       />
-      <button type="submit">Search</button>
+      <button type="submit" className="search-button">
+        Search
+      </button>
     </form>
   );
 };
+
 
 export default SearchBar;
