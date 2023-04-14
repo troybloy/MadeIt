@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import DropNav from './DropNav'
-import SearchBar from "../Navigation/SearchBar"
+import SearchBar from "./SearchBar"
 
 import './NavBar.css'
 
