@@ -2,6 +2,8 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import DropNav from './DropNav'
+import SearchBar from "../Navigation/SearchBar"
+
 import './NavBar.css'
 
 const NavBar = () => {
@@ -15,6 +17,8 @@ const NavBar = () => {
         <div id='nav-bar-logo' onClick={() => history.push('/')}>
           MadeIt
         </div>
+        <SearchBar />
+
         {!sessionUser && (
           <>
             <div className='sign-in-sign-up-container small-text'>
