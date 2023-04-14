@@ -1,6 +1,8 @@
 # MadeIt
 MadeIt, an Etsy clone, is my take on an ecommerce website. My main focus was on upcycled clothing, however, anyone is free to create any store and shop for any item that fancies their interests.
 
+My GitHub and LinkedIn are linked at the footer of my website!
+
 Live site: [MadeIt](https://madeit.onrender.com/)
 
 # Wiki Link
