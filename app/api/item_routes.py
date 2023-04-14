@@ -2,6 +2,8 @@ from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import Item, db
 from ..forms.item_form import CreateItemForm
+from sqlalchemy import or_
+
 
 
 item_routes = Blueprint('items', __name__)
@@ -76,3 +78,12 @@ def delete_item(item_id):
     db.session.delete(item)
     db.session.commit()
     return {'message': 'Menu Item deleted'}
+
+
+#*************************************************************************#
+# SEARCH ITEMS
+@item_routes.route('/search', methods=['GET'])
+def search_items():
+    query = request.args.get('q', default='', type=str)
+    items = Item.query.filter(or_(Item.item_name.ilike(f"%{query}%"), Item.item_description.ilike(f"%{query}%"))).all()
+    return {'items': [item.to_dict() for item in items]}
